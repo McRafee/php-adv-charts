@@ -3,7 +3,7 @@ $(document).ready(function() {
     var salesPieChart = {};
     var teamsalesLineChart = {};
 
-    console.log(aclChart); //debug
+    // console.log(aclChart); //debug
 
     switch (aclChart) {
         case "guest":
