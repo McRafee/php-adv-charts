@@ -3,9 +3,37 @@ $(document).ready(function() {
     var salesPieChart = {};
     var teamsalesLineChart = {};
 
-    guestLevel();
-    employeeLevel();
-    cLevel();
+    console.log(aclChart); //debug
+
+    switch (aclChart) {
+        case "guest":
+            guestLevel();
+            break;
+        case "employee":
+            guestLevel();
+            employeeLevel();
+            break;
+        case "clevel":
+            guestLevel();
+            employeeLevel();
+            cLevel();
+            break;
+        default:
+            alert("Inserisci un livello di accesso valido!");
+    }
+
+    // if (aclChart == "guest") {
+    //     guestLevel();
+    // } else if (aclChart == "employee") {
+    //     guestLevel();
+    //     employeeLevel();
+    // } else if (aclChart == "clevel") {
+    //     guestLevel();
+    //     employeeLevel();
+    //     cLevel();
+    // } else {
+    //     alert("Inserisci un livello di accesso valido!");
+    // }
 
     // *** FUNCTIONS ***
     function guestLevel() {
@@ -104,28 +132,6 @@ $(document).ready(function() {
             type: 'line', // The type of chart we want to create
             data: data
         });
-        // if ($.isEmptyObject(salesLineChart)) {
-        //     salesLineChart = new Chart($(canvas), {
-        //         type: 'line', // The type of chart we want to create
-        //         data: { // The data for our dataset
-        //             labels: labels,
-        //             datasets: [{
-        //                 label: label,
-        //                 borderColor: borderColor,
-        //                 lineTension: lineTension,
-        //                 data: data
-        //             }]
-        //         },
-        //         options: { // Configuration options go here
-        //
-        //         }
-        //     });
-        // } else {
-        //     salesLineChart.data.labels = labels;
-        //     salesLineChart.data.datasets[0].data = data;
-        //     salesLineChart.update();
-        // }
-
     };
 
     function pieChart(canvas, data, backgroundColor, labels) {
@@ -140,22 +146,5 @@ $(document).ready(function() {
                 labels: labels
             }
         });
-        // if ($.isEmptyObject(salesPieChart)) {
-        //     salesPieChart = new Chart(canvas, {
-        //         type: 'pie',
-        //         data: {
-        //             datasets: [{
-        //                 data: data,
-        //                 backgroundColor: backgroundColor
-        //             }],
-        //
-        //             labels: labels
-        //         }
-        //     });
-        // } else {
-        //     salesPieChart.data.labels = labels;
-        //     salesPieChart.data.datasets[0].data = data;
-        //     salesPieChart.update();
-        // }
     };
 });

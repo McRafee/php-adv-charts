@@ -1,7 +1,4 @@
-<?php
-$acl_chart = $_GET['livello'];
-
-?>
+<?php $acl_chart = $_GET['livello'];?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +29,9 @@ $acl_chart = $_GET['livello'];
             <canvas id="teamsales-line-chart"></canvas>
         </div>
     </main>
+    <script type="text/javascript">
+    var aclChart = "<?php echo $acl_chart; ?>";
+    </script>
     <script src="js/main.js" charset="utf-8"></script>
 </body>
 </html>
